@@ -8,7 +8,7 @@ export default class UsersController {
     }
 
     public async store({request,response}:HttpContextContract){
-        User.create({
+        await User.create({
           name:request.input('name'),
           email:request.input('email'),
           password:request.input('password'),
@@ -24,7 +24,7 @@ export default class UsersController {
         user.email = request.input('email')
         user.password = request.input('password')
         user.status = request.input('status')
-        user.save()
+        await user.save()
         return response.status(202).json(user)
     }
 
