@@ -1,14 +1,14 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
-import Todo from "App/Models/Todo";
+import User from "App/Models/User";
 
-export default class TodosController {
+export default class UsersController {
     public async index(){
-        return Todo.all()
+        return User.all()
     }
 
     public async store({request,response}:HttpContextContract){
-        Todo.create({
+        User.create({
           name:request.input('name'),
           email:request.input('email'),
           password:request.input('password'),
@@ -19,18 +19,18 @@ export default class TodosController {
     }
 
     public async update({request, response, params}:HttpContextContract){
-        const todo = await Todo.findOrFail(params.id)
-        todo.name = request.input('name')
-        todo.email = request.input('email')
-        todo.password = request.input('password')
-        todo.status = request.input('status')
-        todo.save()
-        return response.status(202).json(todo)
+        const user = await User.findOrFail(params.id)
+        user.name = request.input('name')
+        user.email = request.input('email')
+        user.password = request.input('password')
+        user.status = request.input('status')
+        user.save()
+        return response.status(202).json(user)
     }
 
     public async destroy({response, params}:HttpContextContract){
-      const todo = await Todo.find(params.id)
-      await todo?.delete()
+      const user = await User.find(params.id)
+      await user?.delete()
       return response.status(204).json({'deleted':true})
     }
 }

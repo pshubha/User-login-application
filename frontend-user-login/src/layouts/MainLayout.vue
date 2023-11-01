@@ -4,7 +4,7 @@
       <q-toolbar>
 
         <q-toolbar-title>
-          Login Page
+          EVIDENT Capital
         </q-toolbar-title>
 
       </q-toolbar>
@@ -15,28 +15,3 @@
     </q-page-container>
   </q-layout>
 </template>
-
-<!-- <script lang="ts">
-import { defineComponent, ref } from 'vue'
-// import EssentialLink from 'components/EssentialLink.vue'
-
-export default defineComponent({
-  name: 'MainLayout',
-
-  // components: {
-  //   EssentialLink
-  // },
-
-  setup () {
-    const leftDrawerOpen = ref(false)
-
-    return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    }
-  }
-})
-</script> -->

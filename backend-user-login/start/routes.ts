@@ -22,11 +22,13 @@ import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', 'HomeController.index');
 
-Route.get('/user', 'TodosController.index');
+Route.get('/user', 'UsersController.index');
 
-Route.post('/user', 'TodosController.store');
+Route.post('/user', 'UsersController.store');
 
-Route.patch('/user/:id', 'TodosController.update');
+Route.patch('/user/:id', 'UsersController.update');
 
-Route.delete('user/:id', 'TodosController.destroy');
+Route.put('/user/:id', 'UsersController.update');
+
+Route.delete('user/:id', 'UsersController.destroy');
 
